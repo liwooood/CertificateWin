@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CertDll", "CertDll\CertDll.vcxproj", "{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CertActiveX", "CertActiveX\CertActiveX.vcxproj", "{97F97FCE-D5CF-4606-821E-7F1D26E0E946}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D} = {D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D}
+		{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5} = {2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "开发计划", "开发计划", "{8E04A2D0-2EE7-4435-800A-06A2C3586781}"
+	ProjectSection(SolutionItems) = preProject
+		文档\开发计划.txt = 文档\开发计划.txt
+		文档\新建 Microsoft Visio 绘图.vsdx = 文档\新建 Microsoft Visio 绘图.vsdx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "检测浏览器是否运行DLL", "检测浏览器是否运行DLL", "{5B076512-0398-43D3-A227-825372AB8DD0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DetectBrowserProcess", "DetectBrowserProcess\DetectBrowserProcess.vcxproj", "{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.基于CryptoAPI的基础库", "1.基于CryptoAPI的基础库", "{28D3C5B1-FF7C-4B25-A32C-DB16DC4C7666}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "安装包innosetup", "安装包innosetup", "{9E183C32-57D8-4A26-8B6F-5932BB914F78}"
+	ProjectSection(SolutionItems) = preProject
+		InnoSetup\CsswebCert.iss = InnoSetup\CsswebCert.iss
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.证书控件", "2.证书控件", "{836957B0-5075-46D9-B43C-820BAF39B32B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.证书插件", "3.证书插件", "{269DA320-7736-4A51-8439-18D04AC3B726}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "npcert", "CertNPAPI\npcert.vcxproj", "{14A69E57-B6A5-4E2B-9546-A49174777E6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5}.Debug|Win32.Build.0 = Debug|Win32
+		{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5}.Debug|x64.ActiveCfg = Debug|x64
+		{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5}.Debug|x64.Build.0 = Debug|x64
+		{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5}.Release|Win32.ActiveCfg = Release|Win32
+		{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5}.Release|Win32.Build.0 = Release|Win32
+		{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5}.Release|x64.ActiveCfg = Release|x64
+		{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5}.Release|x64.Build.0 = Release|x64
+		{97F97FCE-D5CF-4606-821E-7F1D26E0E946}.Debug|Win32.ActiveCfg = Debug|Win32
+		{97F97FCE-D5CF-4606-821E-7F1D26E0E946}.Debug|Win32.Build.0 = Debug|Win32
+		{97F97FCE-D5CF-4606-821E-7F1D26E0E946}.Debug|x64.ActiveCfg = Debug|x64
+		{97F97FCE-D5CF-4606-821E-7F1D26E0E946}.Debug|x64.Build.0 = Debug|x64
+		{97F97FCE-D5CF-4606-821E-7F1D26E0E946}.Release|Win32.ActiveCfg = Release|Win32
+		{97F97FCE-D5CF-4606-821E-7F1D26E0E946}.Release|Win32.Build.0 = Release|Win32
+		{97F97FCE-D5CF-4606-821E-7F1D26E0E946}.Release|x64.ActiveCfg = Release|x64
+		{97F97FCE-D5CF-4606-821E-7F1D26E0E946}.Release|x64.Build.0 = Release|x64
+		{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D}.Debug|Win32.Build.0 = Debug|Win32
+		{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D}.Debug|x64.ActiveCfg = Debug|x64
+		{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D}.Debug|x64.Build.0 = Debug|x64
+		{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D}.Release|Win32.ActiveCfg = Release|Win32
+		{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D}.Release|Win32.Build.0 = Release|Win32
+		{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D}.Release|x64.ActiveCfg = Release|x64
+		{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D}.Release|x64.Build.0 = Release|x64
+		{14A69E57-B6A5-4E2B-9546-A49174777E6D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{14A69E57-B6A5-4E2B-9546-A49174777E6D}.Debug|Win32.Build.0 = Debug|Win32
+		{14A69E57-B6A5-4E2B-9546-A49174777E6D}.Debug|x64.ActiveCfg = Debug|x64
+		{14A69E57-B6A5-4E2B-9546-A49174777E6D}.Debug|x64.Build.0 = Debug|x64
+		{14A69E57-B6A5-4E2B-9546-A49174777E6D}.Release|Win32.ActiveCfg = Release|Win32
+		{14A69E57-B6A5-4E2B-9546-A49174777E6D}.Release|Win32.Build.0 = Release|Win32
+		{14A69E57-B6A5-4E2B-9546-A49174777E6D}.Release|x64.ActiveCfg = Release|x64
+		{14A69E57-B6A5-4E2B-9546-A49174777E6D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B0BF6DF-26DE-4C9D-B444-7EBDDF45A7D5} = {28D3C5B1-FF7C-4B25-A32C-DB16DC4C7666}
+		{97F97FCE-D5CF-4606-821E-7F1D26E0E946} = {836957B0-5075-46D9-B43C-820BAF39B32B}
+		{14A69E57-B6A5-4E2B-9546-A49174777E6D} = {269DA320-7736-4A51-8439-18D04AC3B726}
+		{D6D6D357-2E1C-4A1E-AE8E-EA939D0CC12D} = {5B076512-0398-43D3-A227-825372AB8DD0}
+	EndGlobalSection
+EndGlobal

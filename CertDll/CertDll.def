@@ -1,0 +1,18 @@
+LIBRARY
+EXPORTS
+  AddTrustedWebSite
+  InstallRootCert
+  InstallCACert
+
+  FindCertByDN
+  DeleteCert
+
+  CreateCSRWinxp
+  CreateCSRWin7
+  InstallCertWinxp
+  InstallCertWin7
+
+  Sign
+  Verify
+
+  WriteInstallLog

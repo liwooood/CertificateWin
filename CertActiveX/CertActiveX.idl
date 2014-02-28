@@ -1,0 +1,57 @@
+// CertActiveX.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(CertActiveX.tlb)，该类型库将成为
+// CertActiveX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(552CB22D-B9A5-4731-9E5E-DEA32E2ADFFF), version(1.0),
+  control ]
+library CertActiveXLib
+{
+	importlib(STDOLE_TLB);
+
+	//  CCertActiveXCtrl 的主调度接口
+	[ 
+		uuid(54581409-9C25-48DB-8207-7D0BD24D2735)	
+	]
+	dispinterface _DCertActiveX
+	{
+		properties:
+		methods:
+			
+			[id(1)] SHORT FindCertByDN(BSTR DN);
+			[id(2)] BSTR CreateCSR(void);
+			[id(3)] SHORT InstallCert(BSTR Cert);
+			[id(4)] BSTR Sign(BSTR CertDN, BSTR RawData);
+			[id(5)] SHORT Verify(BSTR CertDN, BSTR RawData, BSTR SignResult);
+			[id(6)] SHORT DeleteCert(BSTR DN);
+			[id(7)] BSTR ConvertDN(BSTR DN);
+	};
+
+	//  CCertActiveXCtrl 的事件调度接口
+
+	[ 
+		uuid(2C64E849-D2B1-423B-A096-2EE98EB70BA1)	
+	]
+	dispinterface _DCertActiveXEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  CCertActiveXCtrl 的类信息
+	[
+		uuid(24465789-5BD9-435C-85AF-8B90D7CA8956)
+	]
+	coclass CertActiveX
+	{
+		[default] dispinterface _DCertActiveX;
+		[default, source] dispinterface _DCertActiveXEvents;
+	};
+
+};
