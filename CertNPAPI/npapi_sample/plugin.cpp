@@ -53,8 +53,7 @@
 #endif
 
 #include "plugin.h"
-#include "npfunctions.h"
-#include <stdio.h> // add by chen haifeng
+#include "npupp.h"
 
 static NPIdentifier sFoo_id;
 static NPIdentifier sBar_id;
@@ -452,10 +451,10 @@ ScriptablePluginObject::Invoke(NPIdentifier name, const NPVariant *args,
 
     STRINGZ_TO_NPVARIANT(strdup("foo return val"), *result);
 
-    return true;
+    return PR_TRUE;
   }
 
-  return false;
+  return PR_FALSE;
 }
 
 bool
@@ -466,7 +465,7 @@ ScriptablePluginObject::InvokeDefault(const NPVariant *args, uint32_t argCount,
 
   STRINGZ_TO_NPVARIANT(strdup("default method return val"), *result);
 
-  return true;
+  return PR_TRUE;
 }
 
 CPlugin::CPlugin(NPP pNPInstance) :
@@ -508,8 +507,8 @@ CPlugin::CPlugin(NPP pNPInstance) :
 
   if (!NPN_IdentifierIsString(n)) {
     NPString str;
-    str.UTF8Characters = "alert('NPN_IdentifierIsString() test failed!');";
-    str.UTF8Length = strlen(str.UTF8Characters);
+    str.utf8characters = "alert('NPN_IdentifierIsString() test failed!');";
+    str.utf8length = strlen(str.utf8characters);
 
     NPN_Evaluate(m_pNPInstance, sWindowObj, &str, NULL);
   }
@@ -524,7 +523,7 @@ CPlugin::CPlugin(NPP pNPInstance) :
     NPN_GetProperty(m_pNPInstance, doc, n, &rval);
 
     if (NPVARIANT_IS_STRING(rval)) {
-      printf ("title = %s\n", NPVARIANT_TO_STRING(rval).UTF8Characters);
+      printf ("title = %s\n", NPVARIANT_TO_STRING(rval).utf8characters);
 
       NPN_ReleaseVariantValue(&rval);
     }
@@ -535,8 +534,8 @@ CPlugin::CPlugin(NPP pNPInstance) :
     NPN_SetProperty(m_pNPInstance, sWindowObj, n, &v);
 
     NPString str;
-    str.UTF8Characters = "document.getElementById('result').innerHTML += '<p>' + 'NPN_Evaluate() test, document = ' + this + '</p>';";
-    str.UTF8Length = strlen(str.UTF8Characters);
+    str.utf8characters = "document.getElementById('result').innerHTML += '<p>' + 'NPN_Evaluate() test, document = ' + this + '</p>';";
+    str.utf8length = strlen(str.utf8characters);
 
     NPN_Evaluate(m_pNPInstance, doc, &str, NULL);
 
@@ -573,7 +572,7 @@ CPlugin::CPlugin(NPP pNPInstance) :
   NPN_Invoke(sWindowObj, n, vars, 3, &rval);
 
   if (NPVARIANT_IS_STRING(rval)) {
-    printf ("prompt returned '%s'\n", NPVARIANT_TO_STRING(rval).UTF8Characters);
+    printf ("prompt returned '%s'\n", NPVARIANT_TO_STRING(rval).utf8characters);
   }
 
   NPN_ReleaseVariantValue(&rval);
@@ -661,7 +660,7 @@ NPBool CPlugin::isInitialized()
   return m_bInitialized;
 }
 
-int16_t CPlugin::handleEvent(void* event)
+int16 CPlugin::handleEvent(void* event)
 {
 #ifdef XP_MAC
   NPEvent* ev = (NPEvent*)event;
@@ -690,9 +689,9 @@ void CPlugin::showVersion()
   if (m_Window) {
     NPRect r =
       {
-        (uint16_t)m_Window->y, (uint16_t)m_Window->x,
-        (uint16_t)(m_Window->y + m_Window->height),
-        (uint16_t)(m_Window->x + m_Window->width)
+        (uint16)m_Window->y, (uint16)m_Window->x,
+        (uint16)(m_Window->y + m_Window->height),
+        (uint16)(m_Window->x + m_Window->width)
       };
 
     NPN_InvalidateRect(m_pNPInstance, &r);

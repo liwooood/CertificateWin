@@ -5,16 +5,15 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="CertDLL">
       <UniqueIdentifier>{f9692f8f-25d4-4939-bdb9-ba313c20b0c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NPAPI SDK">
+      <UniqueIdentifier>{fceb9234-c700-4ae4-bd19-a73d2774cf60}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,9 +29,6 @@
     <ClCompile Include="np_entry.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="NPString.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="npcert.def">
@@ -43,31 +39,33 @@
     <ClInclude Include="plugin.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="npapi.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="npfunctions.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="npruntime.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="nptypes.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>资源文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\CertDll\CertDll.h">
-      <Filter>CertDLL</Filter>
+    <ClInclude Include="npapi_sdk\npapi.h">
+      <Filter>NPAPI SDK</Filter>
     </ClInclude>
-    <ClInclude Include="NPString.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="npapi_sdk\npfunctions.h">
+      <Filter>NPAPI SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="npapi_sdk\npruntime.h">
+      <Filter>NPAPI SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="npapi_sdk\nptypes.h">
+      <Filter>NPAPI SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CertDll\cert_export.h">
+      <Filter>CertDLL</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="nprt.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="npapi开发说明.txt">
+      <Filter>NPAPI SDK</Filter>
+    </Text>
   </ItemGroup>
 </Project>

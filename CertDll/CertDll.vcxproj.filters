@@ -15,6 +15,9 @@
     <ClCompile Include="CertDll.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CertTestDlg.cpp.bak">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cert_private.h">

@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CertDll.cpp" />
+    <ClCompile Include="CertTestDlg.cpp.bak" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CertDll.def" />

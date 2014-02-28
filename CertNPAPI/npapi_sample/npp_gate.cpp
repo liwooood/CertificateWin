@@ -64,8 +64,8 @@ void NPP_Shutdown(void)
 // will do all the neccessary job
 NPError NPP_New(NPMIMEType pluginType,
                 NPP instance,
-                uint16_t mode,
-                int16_t argc,
+                uint16 mode,
+                int16 argc,
                 char* argn[],
                 char* argv[],
                 NPSavedData* saved)
@@ -185,7 +185,7 @@ NPError NPP_NewStream(NPP instance,
                       NPMIMEType type,
                       NPStream* stream, 
                       NPBool seekable,
-                      uint16_t* stype)
+                      uint16* stype)
 {
   if(instance == NULL)
     return NPERR_INVALID_INSTANCE_ERROR;
@@ -194,21 +194,21 @@ NPError NPP_NewStream(NPP instance,
   return rv;
 }
 
-int32_t NPP_WriteReady (NPP instance, NPStream *stream)
+int32 NPP_WriteReady (NPP instance, NPStream *stream)
 {
   if(instance == NULL)
     return NPERR_INVALID_INSTANCE_ERROR;
 
-  int32_t rv = 0x0fffffff;
+  int32 rv = 0x0fffffff;
   return rv;
 }
 
-int32_t NPP_Write (NPP instance, NPStream *stream, int32_t offset, int32_t len, void *buffer)
+int32 NPP_Write (NPP instance, NPStream *stream, int32 offset, int32 len, void *buffer)
 {   
   if(instance == NULL)
     return NPERR_INVALID_INSTANCE_ERROR;
 
-  int32_t rv = len;
+  int32 rv = len;
   return rv;
 }
 
@@ -248,12 +248,12 @@ NPError NPP_SetValue(NPP instance, NPNVariable variable, void *value)
   return rv;
 }
 
-int16_t	NPP_HandleEvent(NPP instance, void* event)
+int16	NPP_HandleEvent(NPP instance, void* event)
 {
   if(instance == NULL)
     return 0;
 
-  int16_t rv = 0;
+  int16 rv = 0;
   CPlugin * pPlugin = (CPlugin *)instance->pdata;
   if (pPlugin)
     rv = pPlugin->handleEvent(event);

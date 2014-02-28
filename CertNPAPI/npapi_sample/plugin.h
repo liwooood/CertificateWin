@@ -40,7 +40,6 @@
 
 #include "npapi.h"
 #include "npruntime.h"
-#include "nptypes.h" // add by chen haifeng
 
 class CPlugin
 {
@@ -69,8 +68,7 @@ public:
   void shut();
   NPBool isInitialized();
   
-  int16_t handleEvent(void* event);
-  
+  int16 handleEvent(void* event);
 
   void showVersion();
   void clear();

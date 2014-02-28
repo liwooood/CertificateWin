@@ -3,11 +3,11 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri May 31 14:16:21 2013
+ /* File created by MIDL compiler version 8.00.0595 */
+/* at Fri Feb 28 15:12:07 2014
  */
 /* Compiler settings for CertActiveX.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
+    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0595 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
@@ -44,12 +44,14 @@
 #ifndef ___DCertActiveX_FWD_DEFINED__
 #define ___DCertActiveX_FWD_DEFINED__
 typedef interface _DCertActiveX _DCertActiveX;
+
 #endif 	/* ___DCertActiveX_FWD_DEFINED__ */
 
 
 #ifndef ___DCertActiveXEvents_FWD_DEFINED__
 #define ___DCertActiveXEvents_FWD_DEFINED__
 typedef interface _DCertActiveXEvents _DCertActiveXEvents;
+
 #endif 	/* ___DCertActiveXEvents_FWD_DEFINED__ */
 
 
@@ -69,6 +71,17 @@ typedef struct CertActiveX CertActiveX;
 extern "C"{
 #endif 
 
+
+/* interface __MIDL_itf_CertActiveX_0000_0000 */
+/* [local] */ 
+
+#pragma once
+#pragma region Desktop Family
+#pragma endregion
+
+
+extern RPC_IF_HANDLE __MIDL_itf_CertActiveX_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_CertActiveX_0000_0000_v0_0_s_ifspec;
 
 
 #ifndef __CertActiveXLib_LIBRARY_DEFINED__
@@ -106,7 +119,7 @@ EXTERN_C const IID DIID__DCertActiveX;
             _DCertActiveX * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             _DCertActiveX * This);
@@ -134,14 +147,22 @@ EXTERN_C const IID DIID__DCertActiveX;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             _DCertActiveX * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         END_INTERFACE
     } _DCertActiveXVtbl;
@@ -213,7 +234,7 @@ EXTERN_C const IID DIID__DCertActiveXEvents;
             _DCertActiveXEvents * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             _DCertActiveXEvents * This);
@@ -241,14 +262,22 @@ EXTERN_C const IID DIID__DCertActiveXEvents;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             _DCertActiveXEvents * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         END_INTERFACE
     } _DCertActiveXEventsVtbl;
