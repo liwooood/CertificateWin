@@ -68,13 +68,13 @@
     <Text Include="文档\npapi开发说明.txt">
       <Filter>文档</Filter>
     </Text>
+    <Text Include="文档\npcertdll的部署.txt">
+      <Filter>文档</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="nprt.def">
       <Filter>模块定义文件</Filter>
-    </None>
-    <None Include="npcertdll的部署.txt">
-      <Filter>文档</Filter>
     </None>
   </ItemGroup>
 </Project>

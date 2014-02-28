@@ -165,9 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="文档\npapi开发说明.txt" />
+    <Text Include="文档\npcertdll的部署.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="npcertdll的部署.txt" />
     <None Include="nprt.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
