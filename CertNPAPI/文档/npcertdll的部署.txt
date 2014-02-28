@@ -1,0 +1,3 @@
+SOFTWARE\MozillaPlugins\@cssweb.com/npcert
+
+Path=E:\PKI\Certificate\Debug\npcert.dll

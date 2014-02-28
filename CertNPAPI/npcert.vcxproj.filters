@@ -15,6 +15,12 @@
     <Filter Include="NPAPI SDK">
       <UniqueIdentifier>{fceb9234-c700-4ae4-bd19-a73d2774cf60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="模块定义文件">
+      <UniqueIdentifier>{c7d2b2a6-98f4-4ba5-9614-21334203db5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="文档">
+      <UniqueIdentifier>{adc30519-49c8-4780-b39a-d3f6cba7f6e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="plugin.cpp">
@@ -29,11 +35,6 @@
     <ClCompile Include="np_entry.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="npcert.def">
-      <Filter>源文件</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="plugin.h">
@@ -64,8 +65,16 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="npapi开发说明.txt">
-      <Filter>NPAPI SDK</Filter>
+    <Text Include="文档\npapi开发说明.txt">
+      <Filter>文档</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nprt.def">
+      <Filter>模块定义文件</Filter>
+    </None>
+    <None Include="npcertdll的部署.txt">
+      <Filter>文档</Filter>
+    </None>
   </ItemGroup>
 </Project>

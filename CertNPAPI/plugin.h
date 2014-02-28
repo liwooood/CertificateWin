@@ -38,9 +38,10 @@
 #ifndef __PLUGIN_H__
 #define __PLUGIN_H__
 
+#include "nptypes.h" // add by chen haifeng
 #include "npapi.h"
 #include "npruntime.h"
-#include "nptypes.h" // add by chen haifeng
+
 
 class CPlugin
 {

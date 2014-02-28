@@ -84,13 +84,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;NPCERT_EXPORTS;XP_WIN;_X86_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;XP_WIN32;XP_WIN;_X86_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>./npapi_sdk;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ModuleDefinitionFile>npcert.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>nprt.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -152,9 +152,6 @@
     <ClCompile Include="plugin.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="npcert.def" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\CertDll\cert_export.h" />
     <ClInclude Include="npapi_sdk\npapi.h" />
     <ClInclude Include="npapi_sdk\npfunctions.h" />
@@ -167,7 +164,11 @@
     <ResourceCompile Include="nprt.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="npapi开发说明.txt" />
+    <Text Include="文档\npapi开发说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="npcertdll的部署.txt" />
+    <None Include="nprt.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

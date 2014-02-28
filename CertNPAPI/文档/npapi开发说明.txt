@@ -1,0 +1,67 @@
+动态链接库必须以np开头
+
+visual studio开发指南
+https://developer.mozilla.org/en-US/docs/Compiling_The_npruntime_Sample_Plugin_in_Visual_Studio
+
+
+下载npapi_sdk，只有头文件
+https://code.google.com/p/npapi-sdk/source/browse/#svn%2Ftrunk%2Fheaders%253Fstate%253Dclosed
+
+下载sample
+http://mxr.mozilla.org/seamonkey/source/modules/plugin/samples/npruntime/
+
+npupp.h更换为npfunctions.h
+
+include "nptypes.h"
+int16， int32, uint16, uint32更换为int16_t，int32_t, uint16_t, uint32_t
+utf8characters更换为UTF8Characters
+utf8length更换为UTF8Length
+NP_TRUE/NP_FALSE未被定义，直接将其替换成true/false便可。
+
+修改nptypes.h，添加以下代码
+// add by chen haifeng
+#define jref    void *
+#define JRIEnv  void
+// end add
+
+修改np_entry.cpp
+char *
+NP_GetMIMEDescription()
+{
+  return NPP_GetMIMEDescription();
+}
+为
+const char *
+NP_GetMIMEDescription()
+{
+  return NPP_GetMIMEDescription();
+}
+
+删除函数npp_gate.cpp
+/*
+jref NPP_GetJavaClass (void)
+{
+  return NULL;
+}
+*/
+
+
+下载NPAPI-SDK，里面有4个文件npapi.h、npfunctions.h、npruntime.h、nptypes.h，我们不需要改动它们。
+在http://mxr.mozilla.org/seamonkey/source/modules/plugin/samples/npruntime/下载np_entry.cpp、npn_gate.cpp、npp_gate.cpp，我们需要利用它们实现插件脚本化支持。np_entry.cpp和npn_gate.cpp我们不用修改，最主要的就是npp_gate.cpp里面的这3个函数：NPP_GetMIMEDescription、NPP_New和NPP_GetValue，对于Windows版本的插件重要的还有NPP_SetWindow，我们将使用作为参数传进来的窗口句柄实现插件自己的消息循环，在和JavaScript进行通信的时候我们会使用到。
+修改NPP_GetMIMEDescription，Linux版的插件必须实现该函数，返回值必须为指定的格式：
+NP_GetMIMEDescription()
+{
+  return "application/basic-plugin:bsc:Basic plugin";
+}
+application/basic-plugin便是该插件的MIME TYPE了，每个NPAPI插件必须定义自己的的MIME TYPE，这样JavaScript就可以通过MIME TYPE加载插件了，Windows版的插件MIME TYPE是通过.rc资源文件里定义的"MIMEType"字段返回的，Mac版的插件则是通过Info.plist里的WebPluginMIMETypes字段返回的，具体可以参见NPAPI-SDK里的samples里面的例子。
+我们需要在NPP_New里创建我们的插件实例，并使用instance->pdata保存，以便在其他NPP_*函数里可以使用我们的插件实例。另外Mac平台下需要设置NPPVpluginEventModel使用NPEventModelCocoa，否则Chrome浏览器无法正常加载插件。
+复制代码
+NPError NPP_New(NPMIMEType pluginType, NPP instance, uint16_t mode, int16_t argc, char* argn[], char* argv[], NPSavedData* saved)
+{
+if(instance->pdata == NULL)
+    instance->pdata = new CPlugin();
+#ifdef XP_MACOSX
+    NPN_SetValue(instance, NPPVpluginEventModel, (void *)NPEventModelCocoa);
+#endif
+}
+复制代码
