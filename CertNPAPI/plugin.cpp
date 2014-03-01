@@ -64,7 +64,12 @@ static NPIdentifier sCreateElement_id;
 static NPIdentifier sCreateTextNode_id;
 static NPIdentifier sAppendChild_id;
 static NPIdentifier sPluginType_id;
+
 static NPObject *sWindowObj;
+
+// 自定义方法
+static NPIdentifier sGetVersion;
+
 
 // Helper class that can be used to map calls to the NPObject hooks
 // into virtual methods on instances of classes that derive from this
@@ -368,7 +373,13 @@ DECLARE_NPOBJECT_CLASS_WITH_BASE(ScriptablePluginObject,
 bool
 ScriptablePluginObject::HasMethod(NPIdentifier name)
 {
-  return name == sFoo_id;
+	// 添加自定义方法
+	if (name == sGetVersion)
+		return true;
+
+	return false;
+
+  //return name == sFoo_id;
 }
 
 bool
@@ -412,6 +423,17 @@ bool
 ScriptablePluginObject::Invoke(NPIdentifier name, const NPVariant *args,
                                uint32_t argCount, NPVariant *result)
 {
+	// 添加自定义方法
+	if (name == sGetVersion)
+	{
+		//NPString str;
+		//str.UTF8Characters = "1.0";
+		//str.UTF8Length = strlen(str.UTF8Characters);
+
+		STRINGZ_TO_NPVARIANT("1.0", *result);
+		return true;
+	}
+
   if (name == sFoo_id) {
     printf ("foo called!\n");
 
@@ -481,6 +503,9 @@ CPlugin::CPlugin(NPP pNPInstance) :
 
   NPN_GetValue(m_pNPInstance, NPNVWindowNPObject, &sWindowObj);
 
+  // 添加自定义方法
+  sGetVersion = NPN_GetStringIdentifier("GetVersion");
+  
   NPIdentifier n = NPN_GetStringIdentifier("foof");
 
   sFoo_id = NPN_GetStringIdentifier("foo");
@@ -603,6 +628,7 @@ CPlugin::CPlugin(NPP pNPInstance) :
 
   const char *ua = NPN_UserAgent(m_pNPInstance);
   strcpy(m_String, ua);
+  
 }
 
 CPlugin::~CPlugin()

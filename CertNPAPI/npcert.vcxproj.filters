@@ -21,6 +21,9 @@
     <Filter Include="文档">
       <UniqueIdentifier>{adc30519-49c8-4780-b39a-d3f6cba7f6e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="测试页面">
+      <UniqueIdentifier>{54b8f9d6-3e1e-4814-8692-df020bc4ccf0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="plugin.cpp">
@@ -75,6 +78,9 @@
   <ItemGroup>
     <None Include="nprt.def">
       <Filter>模块定义文件</Filter>
+    </None>
+    <None Include="npapi_sample\test.html">
+      <Filter>测试页面</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -1,7 +1,10 @@
-动态链接库必须以np开头
-
 visual studio开发指南
 https://developer.mozilla.org/en-US/docs/Compiling_The_npruntime_Sample_Plugin_in_Visual_Studio
+
+
+动态链接库必须以np开头
+
+
 
 
 下载npapi_sdk，只有头文件

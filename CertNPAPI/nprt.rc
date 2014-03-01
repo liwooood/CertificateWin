@@ -1,4 +1,4 @@
-//Microsoft Developer Studio generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -13,15 +13,12 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// Ó¢Óï(ÃÀ¹ú) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
-#ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
@@ -44,21 +41,16 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "Comments", "\0"
-            VALUE "CompanyName", " \0"
-            VALUE "FileDescription", "nprt\0"
-            VALUE "FileExtents", "rts\0"
-            VALUE "FileOpenName", "nprt\0"
-            VALUE "FileVersion", "1, 0, 0, 1\0"
-            VALUE "InternalName", "nprt\0"
-            VALUE "LegalCopyright", "Copyright © 1999\0"
-            VALUE "LegalTrademarks", "\0"
-            VALUE "MIMEType", "application/mozilla-npruntime-scriptable-plugin\0"
-            VALUE "OriginalFilename", "nprt.dll\0"
-            VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "npruntime scriptable example plugin\0"
-            VALUE "ProductVersion", "1, 0, 0, 1\0"
-            VALUE "SpecialBuild", "\0"
+            VALUE "CompanyName", "cssweb"
+            VALUE "FileDescription", "cssweb cert plugin"
+            VALUE "FileOpenName", "npcert"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "npcert"
+            VALUE "LegalCopyright", "Copyright ?1999"
+            VALUE "MIMEType", "application/cssweb_cert_plugin"
+            VALUE "OriginalFilename", "npcert.dll"
+            VALUE "ProductName", "cssweb cert plugin"
+            VALUE "ProductVersion", "1, 0, 0, 1"
         END
     END
     BLOCK "VarFileInfo"
@@ -67,8 +59,6 @@ BEGIN
     END
 END
 
-#endif    // !_MAC
-
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -76,18 +66,18 @@ END
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE 
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE 
 BEGIN
     "\r\n"
     "\0"
@@ -95,7 +85,7 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
-#endif    // English (U.S.) resources
+#endif    // Ó¢Óï(ÃÀ¹ú) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

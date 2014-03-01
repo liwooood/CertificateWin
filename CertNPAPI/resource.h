@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Developer Studio generated include file.
-// Used by np4xscr.rc
+// Microsoft Visual C++ 生成的包含文件。
+// 供 nprt.rc 使用
 //
 #define IDD_MAIN                        101
 #define IDC_BUTTON_GO                   1002
