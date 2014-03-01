@@ -74,6 +74,9 @@
     <Text Include="文档\npcertdll的部署.txt">
       <Filter>文档</Filter>
     </Text>
+    <Text Include="plugin.cpp.txt">
+      <Filter>源文件</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="nprt.def">

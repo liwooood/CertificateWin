@@ -164,6 +164,7 @@
     <ResourceCompile Include="nprt.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="plugin.cpp.txt" />
     <Text Include="文档\npapi开发说明.txt" />
     <Text Include="文档\npcertdll的部署.txt" />
   </ItemGroup>
