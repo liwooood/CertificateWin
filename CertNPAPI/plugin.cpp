@@ -509,11 +509,14 @@ CPlugin::CPlugin(NPP pNPInstance) :
   m_hWnd = NULL;
 #endif
 
+  MessageBox(NULL, "begin", "test", MB_OK);
+
   NPN_GetValue(m_pNPInstance, NPNVWindowNPObject, &sWindowObj);
 
   // 添加自定义方法
   sGetVersion = NPN_GetStringIdentifier("GetVersion");
   
+  /*
   NPIdentifier n = NPN_GetStringIdentifier("foof");
 
   sFoo_id = NPN_GetStringIdentifier("foo");
@@ -633,10 +636,12 @@ CPlugin::CPlugin(NPP pNPInstance) :
 
   NPN_ReleaseVariantValue(&rval);
   NPN_ReleaseObject(myobj);
+  */
 
   const char *ua = NPN_UserAgent(m_pNPInstance);
   strcpy(m_String, ua);
-  
+
+  MessageBox(NULL, "end", "test", MB_OK);
 }
 
 CPlugin::~CPlugin()
