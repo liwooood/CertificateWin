@@ -429,8 +429,16 @@ ScriptablePluginObject::Invoke(NPIdentifier name, const NPVariant *args,
 		//NPString str;
 		//str.UTF8Characters = "1.0";
 		//str.UTF8Length = strlen(str.UTF8Characters);
+		MessageBox(NULL, "test1", "test", MB_OK);
+		//STRINGZ_TO_NPVARIANT(strdup("1.0"), *result);
+		//INT32_TO_NPVARIANT(10, *result);
+		//MessageBox(NULL, "test2", "test", MB_OK);
 
-		STRINGZ_TO_NPVARIANT("1.0", *result);
+		char * version = "1.0";
+		char* npOutString = (char *)NPN_MemAlloc(strlen(version) + 1);
+		strcpy(npOutString, version);
+		STRINGZ_TO_NPVARIANT(npOutString, *result);
+
 		return true;
 	}
 

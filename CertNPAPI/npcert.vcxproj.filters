@@ -79,7 +79,7 @@
     <None Include="nprt.def">
       <Filter>模块定义文件</Filter>
     </None>
-    <None Include="npapi_sample\test.html">
+    <None Include="test.html">
       <Filter>测试页面</Filter>
     </None>
   </ItemGroup>
